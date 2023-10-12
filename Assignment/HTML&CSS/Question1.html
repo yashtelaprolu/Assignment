@@ -1,0 +1,91 @@
+<!-- Create a basic calculator using HTML, CSS, and JavaScript with the functionality of add,
+subtract, multiply and divide. Use the following picture forreference -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Calculator</title>
+    <style>
+        
+        #calculator {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            background-color: lightgray;
+        }
+
+        input[type="text"] {
+            width: 60%;
+            font-size: 18px;
+            padding: 9px;
+            border: none;
+            background-color: white;
+        }
+
+        input[type="button"] {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            margin: 7px;
+            
+        }
+        .math{
+            background-color: grey;
+        }
+        .calca{
+            background-color: burlywood;
+            
+        }
+        .minus{
+            background-color: lightseagreen;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="calculator">
+        <input type="text" id="display" readonly>
+        <input class="minus" type="button" value="AC" onclick="clearDisplay()">
+        <input class="calca" type="button" value="7" onclick="addToDisplay('7')">
+        <input class="calca" type="button" value="8" onclick="addToDisplay('8')">
+        <input class="calca" type="button" value="9" onclick="addToDisplay('9')">
+        <input class="math" type="button" value="+" onclick="addToDisplay('+')">
+        <br>
+        <input class="calca" type="button" value="4" onclick="addToDisplay('4')">
+        <input class="calca" type="button" value="5" onclick="addToDisplay('5')">
+        <input class="calca" type="button" value="6" onclick="addToDisplay('6')">
+        <input class="math" type="button" value="-" onclick="addToDisplay('-')">
+        <br>
+        <input class="calca" type="button" value="1" onclick="addToDisplay('1')">
+        <input class="calca" type="button" value="2" onclick="addToDisplay('2')">
+        <input class="calca" type="button" value="3" onclick="addToDisplay('3')">
+        <input class="math" type="button" value="*" onclick="addToDisplay('*')">
+        <br>
+        <input class="calca" type="button" value="." onclick="addToDisplay('.')">
+        <input class="calca" type="button" value="0" onclick="addToDisplay('0')">
+        <input class="calca" type="button" value="=" onclick="calculate()">
+        <input class="math" type="button" value="/" onclick="addToDisplay('/')">
+    </div>
+
+    <script>
+        function addToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function calculate() {
+            try {
+                document.getElementById('display').value = eval(document.getElementById('display').value);
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>
